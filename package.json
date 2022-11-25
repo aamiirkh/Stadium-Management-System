@@ -1,0 +1,9 @@
+{
+  "name": "stadium-management-system",
+  "version": "0.0.0",
+  "description": "Stadium Management System",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
