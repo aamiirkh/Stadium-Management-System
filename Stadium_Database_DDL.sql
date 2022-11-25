@@ -142,48 +142,49 @@ ALTER TABLE duration
 ALTER TABLE reservation
     ADD CONSTRAINT reservation_billing_fk FOREIGN KEY ( invoice_number )
         REFERENCES billing ( invoice_number )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE reservation
     ADD CONSTRAINT reservation_stadium_fk FOREIGN KEY ( stadium_id )
         REFERENCES stadium ( stadium_id )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE reservation
     ADD CONSTRAINT reservation_team_fk FOREIGN KEY ( team_id )
         REFERENCES team ( team_id )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE stadium
     ADD CONSTRAINT stadium_location_fk FOREIGN KEY ( location_id )
         REFERENCES location ( location_id )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE staff
     ADD CONSTRAINT staff_jobs_fk FOREIGN KEY ( job_id )
         REFERENCES jobs ( job_id )
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE team_member
     ADD CONSTRAINT team_member_team_fk FOREIGN KEY ( team_id )
         REFERENCES team ( team_id )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE ticket
     ADD CONSTRAINT ticket_seat_fk FOREIGN KEY ( seat_type )
         REFERENCES seat ( seat_type )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 ALTER TABLE ticket
     ADD CONSTRAINT ticket_stadium_fk FOREIGN KEY ( stadium_id )
         REFERENCES stadium ( stadium_id )
-            ON DELETE CASCADE
+            ON UPDATE CASCADE ON DELETE CASCADE
     NOT DEFERRABLE;
 
 
