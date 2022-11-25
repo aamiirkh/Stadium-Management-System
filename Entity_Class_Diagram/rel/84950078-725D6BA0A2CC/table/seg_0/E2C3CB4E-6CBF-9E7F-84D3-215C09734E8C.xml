@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E2C3CB4E-6CBF-9E7F-84D3-215C09734E8C" name="Jobs">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>CC64C0EB-57D2-6BB4-2553-2FD0EA0F57F6</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Job_ID" id="22D3A46E-51DB-EDDA-BC3C-3F8C1283DFB8">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 14:12:13 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Job_Title" id="0520F2CC-1C4B-A352-8D40-F321B3BB30E8">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>34072702-2CEB-3D6F-9593-E14FDFC3F4A9</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Salary" id="05E08AA2-683A-490D-B71F-55E549597A2C">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>B2525CBB-4C04-4288-2868-E1BCC58B20C8</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0D6C3FB6-F864-6657-DE51-B3C513AD3D52" name="Jobs_PK">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>8E2B41DE-3C91-F8D3-62E7-4FA180DC87E4</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="22D3A46E-51DB-EDDA-BC3C-3F8C1283DFB8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

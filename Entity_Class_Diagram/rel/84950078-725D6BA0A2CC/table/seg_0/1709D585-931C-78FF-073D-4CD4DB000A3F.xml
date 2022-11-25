@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1709D585-931C-78FF-073D-4CD4DB000A3F" name="Team">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>115ADEA0-E0C6-21CC-B9ED-D8C2B5782115</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Team_ID" id="F36D960D-8C0E-DF9F-7012-9A013EE54A99">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>59F4E7C9-7E75-3F85-0285-51EF62AA9F58</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Team_Name" id="0AF0C268-DCCA-3203-AC8E-6AE30EC93329">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>F71E4B0C-9660-5963-88EC-23B96BC66070</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="No_of_Team_Members" id="F1BB8680-3D36-A9D0-5D9A-6EF24DD424FC">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>41E7E6FA-CB82-36BF-2021-62E815C32157</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7C0FF04E-B2B8-E790-0347-31B80357B8E6" name="Team_PK">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>B5E2CD1B-1B83-9816-88FD-4B4E2F592E62</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F36D960D-8C0E-DF9F-7012-9A013EE54A99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

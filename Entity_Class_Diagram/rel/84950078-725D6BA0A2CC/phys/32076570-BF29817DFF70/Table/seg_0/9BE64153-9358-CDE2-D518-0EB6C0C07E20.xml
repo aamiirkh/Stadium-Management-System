@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Billing" directorySegmentName="seg_0" id="9BE64153-9358-CDE2-D518-0EB6C0C07E20">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Invoice_Number" id="13E7D649-813C-5CEE-2E83-7B81368488EC">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Rate_per_hour" id="5531E213-DCF2-6C74-822C-E77DCC5146BD">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Total_Cost" id="FFD9D490-856F-CABC-1B04-C52FABB2D646">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Billing_PK" id="5EA777D9-A4C1-155C-D450-81D67EB2CCB8">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Jobs" directorySegmentName="seg_0" id="E2C3CB4E-6CBF-9E7F-84D3-215C09734E8C">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Role" id="0520F2CC-1C4B-A352-8D40-F321B3BB30E8">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Salary" id="05E08AA2-683A-490D-B71F-55E549597A2C">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Jobs_PK" id="0D6C3FB6-F864-6657-DE51-B3C513AD3D52">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

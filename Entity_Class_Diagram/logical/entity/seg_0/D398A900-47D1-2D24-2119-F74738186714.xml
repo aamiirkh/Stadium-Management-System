@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D398A900-47D1-2D24-2119-F74738186714" name="Reservation">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:34:48 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Date" id="450E4262-4A6D-43AD-57CA-DE2832EFDB6C">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:34:53 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Start_Time" id="AEA99508-210E-58A7-17A2-975A8A2C8154">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:35:17 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Invoice_Number" id="A746D3AF-2892-275A-E6CB-72F3565043FD">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:35:39 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Team_ID" id="C4DBD5E4-1E00-0B67-837F-F3519E29F4EF">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:37:23 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stadium_ID" id="D22E91F2-EEAF-0BE1-3B0D-8099E1ED8C05">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:37:36 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stadium_ID1" id="D36903E7-137B-D2DF-D67B-5F8EA3511658">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:54:34 UTC</createdTime>
+<generatorID>FDBB0C26-F714-BBE2-A8FA-C0A93E723534</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<referedAttribute>DBFAA7F6-C18A-B29F-A262-A002F1B7DD0C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Team_ID1" id="C46C6792-8477-718C-FA66-1A5191EE154B">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:00:49 UTC</createdTime>
+<generatorID>C9E45EDE-82AB-50FD-299D-CCFAC73E1B46</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<referedAttribute>59F4E7C9-7E75-3F85-0285-51EF62AA9F58</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="218DA0DD-6C24-0A6B-9F05-DFEE6B3C9432" name="Reservation PK">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:35:15 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>450E4262-4A6D-43AD-57CA-DE2832EFDB6C</attributeRef>
+<attributeRef>AEA99508-210E-58A7-17A2-975A8A2C8154</attributeRef>
+<attributeRef>C46C6792-8477-718C-FA66-1A5191EE154B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

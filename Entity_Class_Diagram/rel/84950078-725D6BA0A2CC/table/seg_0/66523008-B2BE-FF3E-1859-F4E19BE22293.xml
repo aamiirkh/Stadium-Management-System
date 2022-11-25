@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="66523008-B2BE-FF3E-1859-F4E19BE22293" name="Location">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>1DD74498-3FA0-E774-B323-EFE06D6B302A</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Location_ID" id="BD88AB3F-2D90-F2D7-BDF5-06CB3B1F0B38">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 14:11:04 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Address" id="E0036EC8-E4A3-2185-00E9-86E5DB3C0D28">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>86915CCC-EB2F-3E94-2439-3F0457D75340</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Postal_Code" id="C72A082E-915D-2801-D4D3-4DE628E4F838">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>AD6B3EB7-DEC3-E5A0-4E9C-08447256FE91</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="City" id="DEFDAD17-C82A-EE4E-0C5F-F1F07964EE08">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>4EA6B208-5BB6-0104-6EAF-DC58DA318C5B</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="02682460-612D-575B-C327-366A4EAA811A" name="Location_PK">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:26:33 UTC</createdTime>
+<generatorID>F436AB38-F950-01BB-8188-EFE94406B310</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD88AB3F-2D90-F2D7-BDF5-06CB3B1F0B38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

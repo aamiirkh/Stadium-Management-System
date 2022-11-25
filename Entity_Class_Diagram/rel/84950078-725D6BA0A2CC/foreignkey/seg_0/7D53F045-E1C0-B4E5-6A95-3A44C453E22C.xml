@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7D53F045-E1C0-B4E5-6A95-3A44C453E22C" containerWithKeyObject="556C4DE0-9D97-A0D7-0C0D-5C7B6C3829B2" localFKIndex="88390DAF-4FB0-B25F-8306-7F578ADEC6C7" name="Ticket_Seat_FK">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:43:03 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<referredTableLongName>Seat</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>8C14836F-0F27-D818-3607-B078CA1CA80A</referredTableID>
+<keyObject>D567395F-3456-B0C6-F996-14F941543DDF</keyObject>
+<referredKeyID>D567395F-3456-B0C6-F996-14F941543DDF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Seat_type</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

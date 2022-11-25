@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="703DB1B2-06DA-C780-3BFD-87FBA32E9382" name="Ticket">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:10:13 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Ticket_ID" id="80DB6CA1-7DF9-F367-8C84-217140DFE8C3">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:10:23 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Date" id="8EB5DCA6-8540-B3FA-3616-C4F6E00391C0">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:10:51 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Start_Time" id="36BD90F4-B1AA-E553-626D-45EC6E0C45A1">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:11:54 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stadium_ID" id="6B6DAD30-FF5F-64FC-695C-8DD295545D48">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:12:42 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Seat_Type" id="AE2936BE-9BB6-6D96-7088-57142D19BE30">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:13:29 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stadium_ID1" id="B423F912-D346-478C-A3AF-C58085428DDB">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:40:35 UTC</createdTime>
+<generatorID>4BCCEE74-8E9B-DE37-7900-6DD4721874D6</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<referedAttribute>DBFAA7F6-C18A-B29F-A262-A002F1B7DD0C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8F214A48-828D-1EE6-E90E-30DDEC1C5813" name="Ticket PK">
+<createdBy>hp</createdBy>
+<createdTime>2022-11-25 12:10:39 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>80DB6CA1-7DF9-F367-8C84-217140DFE8C3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

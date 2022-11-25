@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Reservation" directorySegmentName="seg_0" id="1742EE5A-1DDF-BBB1-2398-8257E183462A">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Stadium_ID" id="13C04FDA-F500-97FF-DF08-0A35E1770FCB">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Date" id="30DB59B9-A72F-A2A3-9596-F2A20653C294">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Invoice_Number" id="42FBE782-2670-1D1D-56A5-76281F6DC32E">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Team_ID" id="7D0D47B2-06E1-B824-30FF-F170EEABF8CC">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Start_Time" id="8D46D778-0FB8-E79E-29A9-2ED0E1ABFF4E">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Reservation_Stadium_FK" id="94BE5A69-1494-F7DC-CD5F-BF2E3630479D">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Reservation_Team_FK" id="AC1FB5BD-279F-994A-119B-5ED7555445EF">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Reservation_Billing_FK" id="AE844FFE-DD8B-682A-C6CF-36B094A47B8C">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Reservation_PK" id="F5060132-0023-ED31-B8A1-67A7E56DAC16">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

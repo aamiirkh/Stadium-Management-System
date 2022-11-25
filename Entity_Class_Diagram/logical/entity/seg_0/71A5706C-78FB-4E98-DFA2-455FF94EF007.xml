@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="71A5706C-78FB-4E98-DFA2-455FF94EF007" name="Team Member">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:27:33 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Member_ID" id="A4CBEB62-A0E0-3E38-06EB-797EACAB90B2">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:27:40 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Team_ID" id="CEDDFC88-12C9-7F04-F8A3-4F2807B8AFCD">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:27:57 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="F_Name" id="1DDE2CEC-B912-FC9F-AACF-0835ED7B1A5F">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:28:17 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="L_Name" id="024FEA05-2A6D-D531-CBD5-9A4A867F9053">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:29:18 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Age" id="93C33C41-295A-9690-D132-5262CE99FF63">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:29:38 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Phone_Number" id="CC8FAA96-9E25-5C49-D88A-9E9A775FBA72">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:29:51 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Sex" id="60312AAE-10F2-0F50-8447-3926C1174110">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:31:08 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Role" id="7EA117F4-EE3D-32D5-155E-C66FD9E2422D">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:31:36 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Team_ID1" id="6DB022CE-A031-9B77-1F22-2CBBD575C938">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:04:01 UTC</createdTime>
+<generatorID>19DC5233-DE25-0560-A1EB-DDDE5F8BC0DE</generatorID>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<referedAttribute>59F4E7C9-7E75-3F85-0285-51EF62AA9F58</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BAE4FB08-64BE-76FC-A84F-348D7A77782E" name="Team Member PK">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 11:27:55 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A4CBEB62-A0E0-3E38-06EB-797EACAB90B2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SELLS" directorySegmentName="seg_0" id="4BCCEE74-8E9B-DE37-7900-6DD4721874D6">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 12:40:35 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<engineerTo>
+<item key="84950078-84A5-5663-F541-725D6BA0A2CC" value="true"/>
+</engineerTo>
+<sourcePk>BFFC0B43-6D3A-62FC-F799-EAC2862FE8C5</sourcePk>
+<targetPk>8F214A48-828D-1EE6-E90E-30DDEC1C5813</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>79480B99-CB9F-3E7E-9741-9BCC166B2167</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>703DB1B2-06DA-C780-3BFD-87FBA32E9382</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

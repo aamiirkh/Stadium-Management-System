@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Seat" directorySegmentName="seg_0" id="8C14836F-0F27-D818-3607-B078CA1CA80A">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Ticket_Price" id="8B9B8320-1118-B200-4D6B-3CDB694A810A">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Seat_type" id="CA5151D5-AD99-E63E-4F64-2DDF0F4DB797">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Seat_PK" id="D567395F-3456-B0C6-F996-14F941543DDF">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

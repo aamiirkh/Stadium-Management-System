@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Ticket" directorySegmentName="seg_0" id="556C4DE0-9D97-A0D7-0C0D-5C7B6C3829B2">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Start_Time" id="1788AC03-A495-7625-B53B-D6D8203F66D2">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Stadium_ID" id="318C2DC8-5CC9-3162-BA4B-A6BD6998FC4A">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Seat_Type" id="51811986-05E4-C2AA-5541-E49EA5B47604">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Ticket_ID" id="7813B813-E7E0-E2D7-4A19-62F214E64B36">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Date" id="EAF92062-7E7C-F64C-C642-C04F11B1629B">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Ticket_Stadium_FK" id="03EAFCBD-58FB-D73E-3C24-A1396AD4406A">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Ticket_Seat_FK" id="88390DAF-4FB0-B25F-8306-7F578ADEC6C7">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Ticket_PK" id="B86FEBFC-E866-A34D-2D9E-0B3B503B312B">
+<createdBy>Muneeb</createdBy>
+<createdTime>2022-11-25 13:10:30 UTC</createdTime>
+<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
