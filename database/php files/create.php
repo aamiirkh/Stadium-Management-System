@@ -3,52 +3,74 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$name = $address = $salary = "";
-$name_err = $address_err = $salary_err = "";
+$stadium_name = $stadium_type = $stadium_capacity = $location_id = $std_id = "";
+$std_name_err = $std_type_err = $std_capacity_err = $loc_id_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate name
-    $input_name = trim($_POST["name"]);
+    $input_name = trim($_POST["stadium_name"]);
     if(empty($input_name)){
-        $name_err = "Please enter a name.";
+        $std_name_err = "Please enter a stadium name.";
     } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
+        $std_name_err = "Please enter a valid name.";
     } else{
-        $name = $input_name;
+        $stadium_name = $input_name;
     }
     
-    // Validate address
-    $input_address = trim($_POST["address"]);
-    if(empty($input_address)){
-        $address_err = "Please enter an address.";     
+    // Validate type
+    $input_std_type = trim($_POST["stadium_type"]);
+    if(empty($input_std_type)){
+        $std_type_err = "Please enter a stadium type.";     
     } else{
-        $address = $input_address;
+        $stadium_type = $input_std_type;
     }
     
-    // Validate salary
-    $input_salary = trim($_POST["salary"]);
-    if(empty($input_salary)){
-        $salary_err = "Please enter the salary amount.";     
-    } elseif(!ctype_digit($input_salary)){
-        $salary_err = "Please enter a positive integer value.";
+    // Validate capacity
+    $input_capacity = trim($_POST["stadium_capacity"]);
+    if(empty($input_capacity)){
+        $std_capacity_err = "Please enter the stadium capacity.";     
+    } elseif(!ctype_digit($input_capacity)){
+        $std_capacity_err = "Please enter a positive integer value.";
     } else{
-        $salary = $input_salary;
+        $stadium_capacity = $input_capacity;
     }
-    
+
+    // Validate location id
+    $input_loc_id = trim($_POST["location_id"]);
+    if(empty($input_loc_id)){
+        $loc_id_err = "Please enter the location ID.";     
+    } elseif(!ctype_digit($input_loc_id)){
+        $loc_id_err = "Please enter a valid location ID.";
+    } else{
+        $location_id = $input_loc_id;
+    }
+
+    // Validate stadium id
+    $input_std_id = trim($_POST["stadium_id"]);
+    if(empty($input_std_id)){
+        $std_id_err = "Please enter the stadium ID.";     
+    } elseif(!ctype_digit($input_std_id)){
+        $std_id_err = "Please enter a valid stadium ID.";
+    } else{
+        $std_id = $input_std_id;
+    }
+
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($address_err) && empty($salary_err)){
+    if(empty($std_name_err) && empty($std_type_err) && empty($std_capacity_err) && empty($loc_id_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO employees (name, address, salary) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO stadium (stadium_id, stadium_name, stadium_type, stadium_capacity, location_id) VALUES (?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_address, $param_salary);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_std_id, $param_std_name, $param_std_type, $param_capacity, $param_loc_id);
             
             // Set parameters
-            $param_name = $name;
-            $param_address = $address;
-            $param_salary = $salary;
+            $param_std_id = $std_id;
+            $param_std_name = $stadium_name;
+            $param_std_type = $stadium_type;
+            $param_capacity = $stadium_capacity;
+            $param_loc_id = $location_id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -88,27 +110,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-5">Create Record</h2>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Please fill this form and submit to add stadium record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
-                            <span class="invalid-feedback"><?php echo $name_err;?></span>
+                            <label>Stadium ID</label>
+                            <input type="text" name="stadium_id" class="form-control <?php echo (!empty($std_id_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $std_id; ?>">
                         </div>
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>"><?php echo $address; ?></textarea>
-                            <span class="invalid-feedback"><?php echo $address_err;?></span>
+                            <label>Stadium Name</label>
+                            <input type="text" name="stadium_name" class="form-control <?php echo (!empty($std_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $stadium_name; ?>">
+                            <span class="invalid-feedback"><?php echo $std_name_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>Salary</label>
-                            <select id="seat" name="seat">
-                                <option value="none">Select Seat Type</option>
-                                <option value="lower">Lower</option>
-                                <option value="exonomy">Economy</option>
-                                <option value="firstclass">First Class</option>
-                            </select>
-                            <span class="invalid-feedback"><?php echo $salary_err;?></span>
+                            <label>Stadium Type</label>
+                            <textarea name="stadium_type" class="form-control <?php echo (!empty($std_type_err)) ? 'is-invalid' : ''; ?>"><?php echo $stadium_type; ?></textarea>
+                            <span class="invalid-feedback"><?php echo $std_type_err;?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Stadium Capacity</label>
+                            <input type="text" name="stadium_capacity" class="form-control <?php echo (!empty($std_capacity_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $stadium_capacity; ?>">
+                            <span class="invalid-feedback"><?php echo $std_capacity_err;?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Location ID</label>
+                            <textarea name="location_id" class="form-control <?php echo (!empty($loc_id_err)) ? 'is-invalid' : ''; ?>"><?php echo $location_id; ?></textarea>
+                            <span class="invalid-feedback"><?php echo $loc_id_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="index.php" class="btn btn-secondary ml-2">Cancel</a>

@@ -14,7 +14,7 @@ if(isset($_POST["stadium_id"]) && !empty($_POST["stadium_id"])){
     // Validate name
     $input_name = trim($_POST["stadium_name"]);
     if(empty($input_name)){
-        $name_err = "Please enter a name.";
+        $name_err = "Please enter a stadium name.";
     } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
         $name_err = "Please enter a valid name.";
     } else{
@@ -141,7 +141,7 @@ if(isset($_POST["stadium_id"]) && !empty($_POST["stadium_id"])){
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-5">Update Record</h2>
-                    <p>Please edit the input values and submit to update the employee record.</p>
+                    <p>Please edit the input values and submit to update the stadium record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
                             <label>Stadium Name</label>
@@ -158,7 +158,7 @@ if(isset($_POST["stadium_id"]) && !empty($_POST["stadium_id"])){
                             <input type="text" name="stadium_capacity" class="form-control <?php echo (!empty($capacity_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $capacity; ?>">
                             <span class="invalid-feedback"><?php echo $capacity_err;?></span>
                         </div>
-                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+                        <input type="hidden" name="stadium_id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
