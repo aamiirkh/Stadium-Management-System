@@ -5,7 +5,7 @@ if(isset($_GET["stadium_id"]) && !empty(trim($_GET["stadium_id"]))){
     require_once "config.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM stadium WHERE stadium_id = ?";
+    $sql = "SELECT * FROM stadium, location WHERE stadium_id = ? and stadium.location_id = location.location_id";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -85,6 +85,18 @@ if(isset($_GET["stadium_id"]) && !empty(trim($_GET["stadium_id"]))){
                     <div class="form-group">
                         <label>Location ID</label>
                         <p><b><?php echo $row["location_id"]; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Location Address</label>
+                        <p><b><?php echo $row["address"]; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <p><b><?php echo $row["postal_code"]; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <p><b><?php echo $row["city"]; ?></b></p>
                     </div>
                     <p><a href="index.php" class="btn btn-primary">Back</a></p>
                 </div>
