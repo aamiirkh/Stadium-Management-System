@@ -10,9 +10,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .wrapper {
-            width: 600px;
+            width: 800px;
             margin: 0 auto;
         }
+	#dashboard {
+	    padding-left: 80px;
+	    padding-top: 50px;
+	}
 
         table tr td:last-child {
             width: 120px;
@@ -25,6 +29,7 @@
     </script>
 </head>
 <body>
+    <h1 id='dashboard' class="text-inverse-secondary bg-secondary">Admin Dashboard</h1>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -38,7 +43,7 @@
                     require_once "config.php";
 
                     // Attempt select query execution
-                    $sql = "SELECT * FROM stadium";
+                    $sql = "SELECT * FROM stadium, location where stadium.location_id = location.location_id";
                     if($result = mysqli_query($link, $sql)){
                     if(mysqli_num_rows($result) > 0){
                     echo '<table class="table table-bordered table-striped">
@@ -59,6 +64,10 @@
                                 <th>Capacity</th>";
                                 echo "
                                 <th>Location ID</th>";
+                                echo "
+                                <th>Location Address</th>";
+                                echo "
+                                <th>City</th>";
                                 echo "
                                 <th>Action</th>";
                                 echo "
@@ -82,6 +91,10 @@
                                 <td>" . $row['stadium_capacity'] . "</td>";
                                 echo "
                                 <td>" . $row['location_id'] . "</td>";
+                                echo "
+                                <td>" . $row['address'] . "</td>";
+                                echo "
+                                <td>" . $row['city'] . "</td>";
                                 echo "
                                 <td>
                                     ";
