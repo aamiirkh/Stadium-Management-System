@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational Diagram" id="84950078-84A5-5663-F541-725D6BA0A2CC" mainViewID="75378897-3E9B-FA90-2DC5-FE623B5DF98A">
-<createdBy>Muneeb</createdBy>
-<createdTime>2022-11-25 11:12:49 UTC</createdTime>
-<ownerDesignName>Entity_Class_Diagram</ownerDesignName>
-<shouldBeOpen>true</shouldBeOpen>
-<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
-</relationalModel>
