@@ -1,3 +1,0 @@
-D:\Stadium Management System\Stadium Management System\obj\Debug\Stadium Management System.njsproj.AssemblyReference.cache
-D:\Stadium Management System\Stadium Management System\obj\Debug\Stadium Management System.njsproj.CoreCompileInputs.cache
-D:\Stadium Management System\Stadium Management System\bin\Microsoft.NodejsTools.WebRole.dll
