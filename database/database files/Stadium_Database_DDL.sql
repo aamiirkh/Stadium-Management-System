@@ -9,8 +9,8 @@ CREATE TABLE billing (
 ALTER TABLE billing ADD CONSTRAINT billing_pk PRIMARY KEY ( invoice_number );
 
 CREATE TABLE duration (
-    `Date` 					DATE NOT NULL,
-    start_time              DATE NOT NULL,
+    `Date` 					DATE NOT NULL UNIQUE,
+    start_time              DATE NOT NULL UNIQUE,
     end_time                DATE NOT NULL,
     no_of_reservation_hours INTEGER NOT NULL
 );
@@ -37,9 +37,9 @@ ALTER TABLE location ADD CONSTRAINT location_pk PRIMARY KEY ( location_id );
 CREATE TABLE reservation (
     `Date`         DATE NOT NULL,
     start_time     DATE NOT NULL,
-    invoice_number INTEGER NOT NULL,
+    invoice_number INTEGER NOT NULL UNIQUE,
     team_id        INTEGER NOT NULL,
-    stadium_id     INTEGER NOT NULL
+    stadium_id     INTEGER NOT NULL UNIQUE
 );
 
 ALTER TABLE reservation ADD CONSTRAINT reservation_pk PRIMARY KEY ( `date`,
@@ -57,7 +57,7 @@ CREATE TABLE stadium (
     stadium_name     VARCHAR(100) NOT NULL,
     stadium_type     varchar(20) NOT NULL,
     stadium_capacity INTEGER NOT NULL,
-    location_id      INTEGER NOT NULL
+    location_id      INTEGER NOT NULL UNIQUE
 );
 
 ALTER TABLE stadium ADD CONSTRAINT stadium_pk PRIMARY KEY ( stadium_id );

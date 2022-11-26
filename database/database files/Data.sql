@@ -1,6 +1,8 @@
 INSERT INTO LOCATION VALUES (1, 'National Stadium Colony, Gulshan-e-Iqbal', 74600, 'Karachi');
 SELECT * FROM LOCATION;
 
+
+
 INSERT INTO SEAT VALUES ('Lower', 500);
 INSERT INTO SEAT VALUES ('Economy', 1000);
 INSERT INTO SEAT VALUES ('First Class', 2000);
