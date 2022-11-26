@@ -28,9 +28,19 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="php files\config.php" />
+    <Content Include="php files\create.php" />
+    <Content Include="php files\delete.php" />
+    <Content Include="php files\error.php" />
+    <Content Include="php files\index.php" />
+    <Content Include="php files\read.php" />
+    <Content Include="php files\update.php" />
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="php files\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

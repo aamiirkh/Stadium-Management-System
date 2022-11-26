@@ -1,18 +1,18 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+if(isset($_GET["stadium_id"]) && !empty(trim($_GET["stadium_id"]))){
     // Include config file
     require_once "config.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM employees WHERE id = ?";
+    $sql = "SELECT * FROM stadium WHERE stadium_id = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_GET["id"]);
+        $param_id = trim($_GET["stadium_id"]);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -24,9 +24,10 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $name = $row["name"];
-                $address = $row["address"];
-                $salary = $row["salary"];
+                $name = $row["stadium_name"];
+                $type = $row["stadium_type"];
+                $capacity = $row["stadium_capacity"];
+                $location_id = $row["location_id"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -70,16 +71,20 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 <div class="col-md-12">
                     <h1 class="mt-5 mb-3">View Record</h1>
                     <div class="form-group">
-                        <label>Name</label>
-                        <p><b><?php echo $row["name"]; ?></b></p>
+                        <label>Stadium Name</label>
+                        <p><b><?php echo $row["stadium_name"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <p><b><?php echo $row["address"]; ?></b></p>
+                        <label>Stadium Type</label>
+                        <p><b><?php echo $row["stadium_type"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Salary</label>
-                        <p><b><?php echo $row["salary"]; ?></b></p>
+                        <label>Stadium Capacity</label>
+                        <p><b><?php echo $row["stadium_capacity"]; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Location ID</label>
+                        <p><b><?php echo $row["location_id"]; ?></b></p>
                     </div>
                     <p><a href="index.php" class="btn btn-primary">Back</a></p>
                 </div>

@@ -3,16 +3,16 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$name = $address = $salary = "";
-$name_err = $address_err = $salary_err = "";
+$name = $type = $capacity = $loc_id = "";
+$name_err = $type_err = $capacity_err = $loc_err =  "";
  
 // Processing form data when form is submitted
-if(isset($_POST["id"]) && !empty($_POST["id"])){
+if(isset($_POST["stadium_id"]) && !empty($_POST["stadium_id"])){
     // Get hidden input value
-    $id = $_POST["id"];
+    $id = $_POST["stadium_id"];
     
     // Validate name
-    $input_name = trim($_POST["name"]);
+    $input_name = trim($_POST["stadium_name"]);
     if(empty($input_name)){
         $name_err = "Please enter a name.";
     } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
@@ -21,37 +21,37 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $name = $input_name;
     }
     
-    // Validate address address
-    $input_address = trim($_POST["address"]);
-    if(empty($input_address)){
-        $address_err = "Please enter an address.";     
+    // Validate stadium type
+    $input_type = trim($_POST["stadium_type"]);
+    if(empty($input_type)){
+        $type_err = "Please enter an stadium type  (football/cricket/hockey).";     
     } else{
-        $address = $input_address;
+        $type = $input_type;
     }
     
-    // Validate salary
-    $input_salary = trim($_POST["salary"]);
-    if(empty($input_salary)){
-        $salary_err = "Please enter the salary amount.";     
-    } elseif(!ctype_digit($input_salary)){
-        $salary_err = "Please enter a positive integer value.";
+    // Validate stadium capacity
+    $input_capacity = trim($_POST["stadium_capacity"]);
+    if(empty($input_capacity)){
+        $capacity_err = "Please enter the capacity.";     
+    } elseif(!ctype_digit($input_capacity)){
+        $capacity_err = "Please enter a positive integer value.";
     } else{
-        $salary = $input_salary;
+        $capacity = $input_capacity;
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($address_err) && empty($salary_err)){
+    if(empty($name_err) && empty($type_err) && empty($capacity_err)){
         // Prepare an update statement
-        $sql = "UPDATE employees SET name=?, address=?, salary=? WHERE id=?";
+        $sql = "UPDATE stadium SET stadium_name=?, stadium_type=?, stadium_capacity=? WHERE stadium_id=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssi", $param_name, $param_address, $param_salary, $param_id);
+            mysqli_stmt_bind_param($stmt, "sssi", $param_name, $param_type, $param_capacity, $param_id);
             
             // Set parameters
             $param_name = $name;
-            $param_address = $address;
-            $param_salary = $salary;
+            $param_type = $type;
+            $param_capacity = $capacity;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -72,12 +72,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     mysqli_close($link);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    if(isset($_GET["stadium_id"]) && !empty(trim($_GET["stadium_id"]))){
         // Get URL parameter
-        $id =  trim($_GET["id"]);
+        $id =  trim($_GET["stadium_id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM employees WHERE id = ?";
+        $sql = "SELECT * FROM stadium WHERE stadium_id = ?";
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
@@ -95,9 +95,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $name = $row["name"];
-                    $address = $row["address"];
-                    $salary = $row["salary"];
+                    $name = $row["stadium_name"];
+                    $type = $row["stadium_type"];
+                    $capacity = $row["stadium_capacity"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -144,19 +144,19 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     <p>Please edit the input values and submit to update the employee record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
+                            <label>Stadium Name</label>
+                            <input type="text" name="stadium_name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
                             <span class="invalid-feedback"><?php echo $name_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>"><?php echo $address; ?></textarea>
-                            <span class="invalid-feedback"><?php echo $address_err;?></span>
+                            <label>Stadium Type</label>
+                            <textarea name="stadium_type" class="form-control <?php echo (!empty($type_err)) ? 'is-invalid' : ''; ?>"><?php echo $type; ?></textarea>
+                            <span class="invalid-feedback"><?php echo $type_err;?></span>
                         </div>
                         <div class="form-group">
-                            <label>Salary</label>
-                            <input type="text" name="salary" class="form-control <?php echo (!empty($salary_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $salary; ?>">
-                            <span class="invalid-feedback"><?php echo $salary_err;?></span>
+                            <label>Stadium Capacity</label>
+                            <input type="text" name="stadium_capacity" class="form-control <?php echo (!empty($capacity_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $capacity; ?>">
+                            <span class="invalid-feedback"><?php echo $capacity_err;?></span>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
