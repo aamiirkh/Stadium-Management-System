@@ -40,7 +40,7 @@
                     </div>
                     <?php
                     // Include config file
-                    require_once "config.php";
+                    require_once "../config.php";
 
                     // Attempt select query execution
                     $sql = "SELECT * FROM stadium, location where stadium.location_id = location.location_id";
