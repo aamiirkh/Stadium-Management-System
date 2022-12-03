@@ -35,15 +35,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Stadium Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add Stadium</a>
+                        <h2 class="pull-left">Stadium Reservations</h2>
+                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Reserve Stadium</a>
                     </div>
                     <?php
                     // Include config file
                     require_once "config.php";
 
                     // Attempt select query execution
-                    $sql = "SELECT * FROM stadium, location where stadium.location_id = location.location_id";
+                    $sql = "SELECT stadium_name, start_time, team_name, reservation_id, date  FROM reservation, stadium, team where reservation.stadium_id = stadium.stadium_id AND team.team_id = reservation.team_id";
                     if($result = mysqli_query($link, $sql)){
                     if(mysqli_num_rows($result) > 0){
                     echo '<table class="table table-bordered table-striped">
@@ -55,19 +55,15 @@
                             <tr>
                                 ";
                                 echo "
-                                <th>Stadium ID</th>";
-                                echo "
                                 <th>Stadium Name</th>";
                                 echo "
-                                <th>Stadium Type</th>";
+                                <th>Date</th>";
                                 echo "
-                                <th>Capacity</th>";
+                                <th>Team Name</th>";
                                 echo "
-                                <th>Location ID</th>";
+                                <th>Start Time</th>";
                                 echo "
-                                <th>Location Address</th>";
-                                echo "
-                                <th>City</th>";
+                                <th>Duration</th>";
                                 echo "
                                 <th>Action</th>";
                                 echo "
@@ -82,25 +78,21 @@
                             <tr>
                                 ";
                                 echo "
-                                <td>" . $row['stadium_id'] . "</td>";
-                                echo "
                                 <td>" . $row['stadium_name'] . "</td>";
                                 echo "
-                                <td>" . $row['stadium_type'] . "</td>";
+                                <td>" . $row['date'] . "</td>";
                                 echo "
-                                <td>" . $row['stadium_capacity'] . "</td>";
+                                <td>" . $row['team_name'] . "</td>";
                                 echo "
-                                <td>" . $row['location_id'] . "</td>";
+                                <td>" . $row['start_time'] . "</td>";
                                 echo "
-                                <td>" . $row['address'] . "</td>";
-                                echo "
-                                <td>" . $row['city'] . "</td>";
+                                <td>" . $row['duration'] . "</td>";
                                 echo "
                                 <td>
                                     ";
-                                    echo '<a href="read.php?stadium_id='. $row['stadium_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                    echo '<a href="update.php?stadium_id='. $row['stadium_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                    echo '<a href="delete.php?stadium_id='. $row['stadium_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                    echo '<a href="read.php?stadium_id='. $row['reservation_id'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                    echo '<a href="update.php?stadium_id='. $row['reservation_id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                    echo '<a href="delete.php?stadium_id='. $row['reservation_id'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                     echo "
                                 </td>";
                                 echo "
