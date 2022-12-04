@@ -8,40 +8,44 @@ $date = $_POST['date'];
 $s_time = $_POST['s_time'];
 $e_time = $_POST['e_time'];
 $id = $_POST['std_id'];
-$teamid = $_POST['team_id'];
+$teamname = $_POST['team_name'];
 
 $hours = abs((int)$s_time - (int)$e_time);
-echo "$s_time <br> $date";
+#echo "$s_time <br> $date";
 if ((int)$s_time > (int)$e_time){			
 	echo "no success";
 }
 else {
-	// database insert SQL code
-	$sql1 = "INSERT INTO `reservation` (`reservation_id`, `Date`, `start_time`, `team_id`, `stadium_id`) VALUES ('0','$date', '$s_time', '$teamid', '$id')";
-	$result = mysqli_query($link, $sql1);
-	if(!$result){
-		echo mysqli_error($link);
-	}
-	$res_id = 0;
-	$reserve_id = "SELECT reservation_id FROM reservation WHERE Date = $date AND start_time = $s_time";
-	$res = mysqli_query($link, $reserve_id);
-	if($res){
-		echo "1";
-		if(mysqli_num_rows($res) > 0){
-			echo "2";
-		    while($row = mysqli_fetch_array($res)){
-				$res_id = $row['reservation_id'];
-				echo "$res_id";
-			}
+	$team_id = 0;
+	$sql0 = "SELECT team_id from team WHERE team_name = '$teamname'";
+	$rs0 = mysqli_query($link, $sql0);
+
+	if($rs0){
+		while($row = mysqli_fetch_array($rs0)){
+			$team_id = $row['team_id'];
 		}
 	}
-	echo "$res_id";
 
-	$sql2 = "INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`) VALUES ('$res_id','$e_time', '$hours')";
-	// insert in database 
+	// database insert SQL code
+	$sql1 = "INSERT INTO `reservation` (`Date`, `start_time`, `team_id`, `stadium_id`) VALUES ('$date', '$s_time', '$team_id', '$id')";
+	$rs1 = mysqli_query($link, $sql1);
+
+	$res_id = 0;
+
+	$sql2 = "SELECT reservation_id FROM `reservation` WHERE Date = '$date' AND `start_time` = '$s_time'";
 	$rs2 = mysqli_query($link, $sql2);
 
-	if($rs2) {
+	if($rs2){
+		while($row = mysqli_fetch_array($rs2)){
+			$res_id = $row['reservation_id'];
+		}
+	}
+
+	$sql3 = "INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`) VALUES ('$res_id','$e_time', '$hours')";
+	// insert in database 
+	$rs3 = mysqli_query($link, $sql3);
+
+	if($rs0 && $rs1 && $rs2 && $rs3) {
 		echo "Team Reserved Successfully";
 	}
 	else {

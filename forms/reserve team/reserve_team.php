@@ -14,11 +14,11 @@
 <input  type="text" name="date" id="date" placeholder="yyyy-mm-dd">
 </p>
 <p>
-<label >Start time</label>
+<label>Start time</label>
 <input type="text" name="s_time" id="s_time" placeholder="hh:mm:ss">
 </p>
 <p>
-<label >End time</label>
+<label>End time</label>
 <input type="text" name="e_time" id="e_time" placeholder="hh:mm:ss">
 </p>
 <p>
@@ -41,8 +41,8 @@
 </select>
 </p>
 <p>
-<label>Team ID</label>
-<input type="text" name="team_id" id="team_id">
+<label>Team Name</label>
+<input type="text" name="team_name" id="team_name">
 </p>
 <p>&nbsp;</p>
 <p>
