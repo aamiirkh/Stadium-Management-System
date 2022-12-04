@@ -11,7 +11,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07e10141-0c03-4a6f-a077-3134e1d3a2a2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -28,19 +29,64 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="php files\config.php" />
-    <Content Include="php files\create.php" />
-    <Content Include="php files\delete.php" />
-    <Content Include="php files\error.php" />
-    <Content Include="php files\index.php" />
-    <Content Include="php files\read.php" />
-    <Content Include="php files\update.php" />
-    <Content Include="server.js" />
+    <Content Include="admin_dashboard.php" />
+    <Content Include="config.php" />
+    <Content Include="forms\book ticket\book_ticket.php" />
+    <Content Include="forms\book ticket\validate_booking.php" />
+    <Content Include="forms\reserve team\reserve_team.php" />
+    <Content Include="forms\reserve team\validate_team.php" />
+    <Content Include="login.php" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="register.php" />
+    <Content Include="tables\billing table\billing.php" />
+    <Content Include="tables\billing table\error.php" />
+    <Content Include="tables\billing table\read.php" />
+    <Content Include="tables\duration table\duration.php" />
+    <Content Include="tables\duration table\error.php" />
+    <Content Include="tables\duration table\read.php" />
+    <Content Include="tables\jobs table\error.php" />
+    <Content Include="tables\jobs table\jobs.php" />
+    <Content Include="tables\jobs table\read.php" />
+    <Content Include="tables\reservation table\error.php" />
+    <Content Include="tables\reservation table\read.php" />
+    <Content Include="tables\reservation table\reservation.php" />
+    <Content Include="tables\stadium table\create.php" />
+    <Content Include="tables\stadium table\delete.php" />
+    <Content Include="tables\stadium table\error.php" />
+    <Content Include="tables\stadium table\read.php" />
+    <Content Include="tables\stadium table\stadium.php" />
+    <Content Include="tables\stadium table\update.php" />
+    <Content Include="tables\staffs table\error.php" />
+    <Content Include="tables\staffs table\read.php" />
+    <Content Include="tables\staffs table\staff.php" />
+    <Content Include="tables\team table\error.php" />
+    <Content Include="tables\team table\read.php" />
+    <Content Include="tables\team table\team.php" />
+    <Content Include="tables\team_members tables\error.php" />
+    <Content Include="tables\team_members tables\read.php" />
+    <Content Include="tables\team_members tables\team_members.php" />
+    <Content Include="tables\ticket table\error.php" />
+    <Content Include="tables\ticket table\read.php" />
+    <Content Include="tables\ticket table\ticket.php" />
+    <Content Include="user_dashboard.php" />
+    <Content Include="validate_login.php" />
+    <Content Include="validate_register.php" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="php files\" />
+    <Folder Include="forms\" />
+    <Folder Include="forms\book ticket\" />
+    <Folder Include="forms\reserve team\" />
+    <Folder Include="tables\" />
+    <Folder Include="tables\billing table\" />
+    <Folder Include="tables\duration table\" />
+    <Folder Include="tables\jobs table\" />
+    <Folder Include="tables\reservation table\" />
+    <Folder Include="tables\stadium table\" />
+    <Folder Include="tables\staffs table\" />
+    <Folder Include="tables\team table\" />
+    <Folder Include="tables\team_members tables\" />
+    <Folder Include="tables\ticket table\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
