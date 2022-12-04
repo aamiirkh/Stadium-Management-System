@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `stadium_database`
 --
-
+CREATE DATABASE stadium_database;
+use stadium_database;
 -- --------------------------------------------------------
 
 --
@@ -28,9 +29,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `billing` (
-  `invoice_number` int(11) NOT NULL,
+  `invoice_number` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `total_cost` int(11) DEFAULT NULL,
-  `team_ID` int(11) NOT NULL
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -47,7 +48,7 @@ INSERT INTO `billing` (`invoice_number`, `total_cost`, `team_ID`) VALUES
 --
 
 CREATE TABLE `duration` (
-  `reservation_id` int(11) NOT NULL,
+  `reservation_id` int(11) NOT NULL UNIQUE,
   `end_time` time NOT NULL,
   `no_of_reservation_hours` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -66,7 +67,7 @@ INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`)
 --
 
 CREATE TABLE `jobs` (
-  `job_id` varchar(10) NOT NULL,
+  `job_id` varchar(10) NOT NULL PRIMARY KEY,
   `job_title` varchar(50) NOT NULL,
   `salary` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -85,7 +86,7 @@ INSERT INTO `jobs` (`job_id`, `job_title`, `salary`) VALUES
 --
 
 CREATE TABLE `location` (
-  `location_id` int(11) NOT NULL,
+  `location_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `address` varchar(150) NOT NULL,
   `postal_code` int(11) NOT NULL,
   `city` varchar(25) NOT NULL
@@ -106,11 +107,11 @@ INSERT INTO `location` (`location_id`, `address`, `postal_code`, `city`) VALUES
 --
 
 CREATE TABLE `reservation` (
-  `reservation_id` int(11) NOT NULL,
-  `Date` date NOT NULL,
-  `start_time` time NOT NULL,
+  `reservation_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `Date` date NOT NULL UNIQUE,
+  `start_time` time NOT NULL UNIQUE,
   `team_id` int(11) NOT NULL,
-  `stadium_id` int(11) NOT NULL
+  `stadium_id` int(11) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -127,7 +128,7 @@ INSERT INTO `reservation` (`reservation_id`, `Date`, `start_time`, `team_id`, `s
 --
 
 CREATE TABLE `seat` (
-  `seat_type` varchar(15) NOT NULL,
+  `seat_type` varchar(15) NOT NULL PRIMARY KEY,
   `ticket_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -147,7 +148,7 @@ INSERT INTO `seat` (`seat_type`, `ticket_price`) VALUES
 --
 
 CREATE TABLE `stadium` (
-  `stadium_id` int(11) NOT NULL,
+  `stadium_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `stadium_name` varchar(100) NOT NULL,
   `stadium_type` varchar(20) NOT NULL,
   `stadium_capacity` int(11) NOT NULL,
@@ -168,7 +169,7 @@ INSERT INTO `stadium` (`stadium_id`, `stadium_name`, `stadium_type`, `stadium_ca
 --
 
 CREATE TABLE `staff` (
-  `staff_id` int(11) NOT NULL,
+  `staff_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `f_name` varchar(20) NOT NULL,
   `l_name` varchar(20) NOT NULL,
   `phone_number` varchar(11) NOT NULL,
@@ -190,7 +191,7 @@ INSERT INTO `staff` (`staff_id`, `f_name`, `l_name`, `phone_number`, `hire_date`
 --
 
 CREATE TABLE `team` (
-  `team_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `team_name` varchar(50) NOT NULL,
   `no_of_team_members` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -209,7 +210,7 @@ INSERT INTO `team` (`team_id`, `team_name`, `no_of_team_members`) VALUES
 --
 
 CREATE TABLE `team_member` (
-  `member_id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `team_id` int(11) NOT NULL,
   `f_name` varchar(20) NOT NULL,
   `l_name` varchar(20) DEFAULT NULL,
@@ -233,7 +234,7 @@ INSERT INTO `team_member` (`member_id`, `team_id`, `f_name`, `l_name`, `age`, `p
 --
 
 CREATE TABLE `ticket` (
-  `ticket_id` int(11) NOT NULL,
+  `ticket_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `reservation_id` int(11) NOT NULL,
   `seat_type` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -255,73 +256,57 @@ INSERT INTO `ticket` (`ticket_id`, `reservation_id`, `seat_type`) VALUES
 -- Indexes for table `billing`
 --
 ALTER TABLE `billing`
-  ADD PRIMARY KEY (`invoice_number`),
   ADD UNIQUE KEY `team_ID_UNIQUE` (`team_ID`);
 
 --
 -- Indexes for table `duration`
 --
-ALTER TABLE `duration`
-  ADD PRIMARY KEY (`reservation_id`);
 
 --
 -- Indexes for table `jobs`
 --
-ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`job_id`);
 
 --
 -- Indexes for table `location`
 --
-ALTER TABLE `location`
-  ADD PRIMARY KEY (`location_id`);
 
 --
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`reservation_id`),
   ADD KEY `reservation_stadium_fk` (`stadium_id`),
   ADD KEY `reservation_team_fk` (`team_id`);
 
 --
 -- Indexes for table `seat`
 --
-ALTER TABLE `seat`
-  ADD PRIMARY KEY (`seat_type`);
 
 --
 -- Indexes for table `stadium`
 --
 ALTER TABLE `stadium`
-  ADD PRIMARY KEY (`stadium_id`),
   ADD KEY `stadium_location_fk` (`location_id`);
 
 --
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staff_id`),
   ADD KEY `staff_jobs_fk` (`job_id`);
 
 --
 -- Indexes for table `team`
 --
-ALTER TABLE `team`
-  ADD PRIMARY KEY (`team_id`);
 
 --
 -- Indexes for table `team_member`
 --
 ALTER TABLE `team_member`
-  ADD PRIMARY KEY (`member_id`),
   ADD KEY `team_member_team_fk` (`team_id`);
 
 --
 -- Indexes for table `ticket`
 --
 ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`ticket_id`),
   ADD KEY `ticket_seat_fk` (`seat_type`),
   ADD KEY `ticket_reservation_fk_idx` (`reservation_id`);
 
@@ -336,11 +321,6 @@ ALTER TABLE `billing`
   ADD CONSTRAINT `billing_team_id_fk` FOREIGN KEY (`team_ID`) REFERENCES `team` (`team_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `duration`
---
-ALTER TABLE `duration`
-  ADD CONSTRAINT `duration_reservation_fk` FOREIGN KEY (`reservation_id`) REFERENCES `reservation` (`reservation_id`);
-
 --
 -- Constraints for table `reservation`
 --
@@ -372,6 +352,10 @@ ALTER TABLE `team_member`
 ALTER TABLE `ticket`
   ADD CONSTRAINT `ticket_reservation_fk` FOREIGN KEY (`reservation_id`) REFERENCES `reservation` (`reservation_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `ticket_seat_fk` FOREIGN KEY (`seat_type`) REFERENCES `seat` (`seat_type`) ON DELETE CASCADE ON UPDATE CASCADE;
+-- Constraints for table `duration`
+--
+ALTER TABLE duration
+  ADD CONSTRAINT duration_reservation_fk FOREIGN KEY (reservation_id) REFERENCES reservation (reservation_id) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
