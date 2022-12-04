@@ -108,15 +108,17 @@ INSERT INTO `location` (`location_id`, `address`, `postal_code`, `city`) VALUES
 
 CREATE TABLE `reservation` (
   `reservation_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `Date` date NOT NULL UNIQUE,
-  `start_time` time NOT NULL UNIQUE,
+  `Date` date NOT NULL,
+  `start_time` time NOT NULL,
   `team_id` int(11) NOT NULL,
-  `stadium_id` int(11) NOT NULL UNIQUE
+  `stadium_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reservation`
 --
+
+ALTER table reservation ADD CONSTRAINT unique_composite_key UNIQUE (Date, start_time, stadium_id);
 
 INSERT INTO `reservation` (`reservation_id`, `Date`, `start_time`, `team_id`, `stadium_id`) VALUES
 (1, '2022-11-28', '18:00:00', 1, 1);
