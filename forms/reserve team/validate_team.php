@@ -10,6 +10,9 @@ $e_time = $_POST['e_time'];
 $id = $_POST['std_id'];
 $teamname = $_POST['team_name'];
 
+// Turn autocommit off
+mysqli_autocommit($link,FALSE);
+
 $hours = abs((int)$s_time - (int)$e_time);
 if ((int)$s_time > (int)$e_time){				// test case for checking start time > end time	
 	echo mysqli_error($link);
@@ -56,11 +59,18 @@ else {
 			$sql3 = "INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`) VALUES ('$res_id','$e_time', '$hours')";
 			// insert in database 
 			$rs3 = mysqli_query($link, $sql3);
+			
+			$total_cost = $hours * 5000;
+			$sql4 = "INSERT INTO `billing` (`total_cost`, `team_id`) VALUES ('$total_cost', '$team_id')";
+			$rs4 = mysqli_query($link, $sql4);
 
-			if($rs0 && $rs1 && $rs2 && $rs3) {
+			if($rs0 && $rs1 && $rs2 && $rs3 && $rs4) {
+				mysqli_commit($link);				// commiting changes
 				echo "Team Reserved Successfully";
 			}
 			else {
+				// Rollback transaction
+				mysqli_rollback($con);
 				echo mysqli_error($link);
 			}
 		}
