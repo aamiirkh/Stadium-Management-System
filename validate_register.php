@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    $query2 = "INSERT INTO `users` (`username`, `password`) VALUES ('$username', '$password')";
 	    $rs = mysqli_query($link, $query2);
 	    if ($rs){
-	        header("location: login.php");
+	        header("location: index.php");
 	    }
         else{
             echo "Error.";

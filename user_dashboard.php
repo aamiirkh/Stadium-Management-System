@@ -17,7 +17,7 @@
 <a class="navbar-brand" href="./forms/book ticket/book_ticket.php" ><button type="button" class="btn btn-primary">Book Ticket</button></a>
 <a class="navbar-brand" href="./forms/reserve team/reserve_team.php" ><button type="button" class="btn btn-primary">Reserve Team</button></a>
 <a class="navbar-brand" href="./forms/feedback form/feedback.php" ><button type="button" class="btn btn-primary">Submit Feedback</button></a>
-<a class="navbar-brand" href="login.php" ><button type="button" class="btn btn-primary">Logout</button></a>
+<a class="navbar-brand" href="index.php" ><button type="button" class="btn btn-primary">Logout</button></a>
 </div>
 </nav>
 </div>
