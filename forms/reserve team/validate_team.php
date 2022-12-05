@@ -11,46 +11,60 @@ $id = $_POST['std_id'];
 $teamname = $_POST['team_name'];
 
 $hours = abs((int)$s_time - (int)$e_time);
-#echo "$s_time <br> $date";
-if ((int)$s_time > (int)$e_time){			
-	echo "no success";
+if ((int)$s_time > (int)$e_time){				// test case for checking start time > end time	
+	echo mysqli_error($link);
 }
 else {
-	$team_id = 0;
-	$sql0 = "SELECT team_id from team WHERE team_name = '$teamname'";
-	$rs0 = mysqli_query($link, $sql0);
-
-	if($rs0){
-		while($row = mysqli_fetch_array($rs0)){
-			$team_id = $row['team_id'];
+	$sql = "SELECT * FROM duration, reservation as e WHERE Date = '$date' AND ('$s_time' < end_time OR '$e_time' > start_time) AND e.reservation_id = duration.reservation_id;";
+	if($rs = mysqli_query($link, $sql))
+	{
+		if(mysqli_num_rows($rs) > 0)
+		{
+			echo "Team Reservation failed";
 		}
-	}
+		else
+		{
+			$team_id = 0;
+			$sql0 = "SELECT team_id from team WHERE team_name = '$teamname'";
+			$rs0 = mysqli_query($link, $sql0);
 
-	// database insert SQL code
-	$sql1 = "INSERT INTO `reservation` (`Date`, `start_time`, `team_id`, `stadium_id`) VALUES ('$date', '$s_time', '$team_id', '$id')";
-	$rs1 = mysqli_query($link, $sql1);
+			if($rs0){
+				if(mysqli_num_rows($rs0) > 0){
+					while($row = mysqli_fetch_array($rs0)){
+						$team_id = $row['team_id'];
+					}
+				}
+			}
 
-	$res_id = 0;
+			// database insert SQL code
+			$sql1 = "INSERT INTO `reservation` (`Date`, `start_time`, `team_id`, `stadium_id`) VALUES ('$date', '$s_time', '$team_id', '$id')";
+			$rs1 = mysqli_query($link, $sql1);
 
-	$sql2 = "SELECT reservation_id FROM `reservation` WHERE Date = '$date' AND `start_time` = '$s_time'";
-	$rs2 = mysqli_query($link, $sql2);
+			$res_id = 0;
 
-	if($rs2){
-		while($row = mysqli_fetch_array($rs2)){
-			$res_id = $row['reservation_id'];
+			$sql2 = "SELECT reservation_id FROM `reservation` WHERE Date = '$date' AND `start_time` = '$s_time'";
+			$rs2 = mysqli_query($link, $sql2);
+
+			if($rs2){
+				if(mysqli_num_rows($rs2) > 0){
+					while($row = mysqli_fetch_array($rs2)){
+						$res_id = $row['reservation_id'];
+					}
+				}
+			}
+
+			$sql3 = "INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`) VALUES ('$res_id','$e_time', '$hours')";
+			// insert in database 
+			$rs3 = mysqli_query($link, $sql3);
+
+			if($rs0 && $rs1 && $rs2 && $rs3) {
+				echo "Team Reserved Successfully";
+			}
+			else {
+				echo mysqli_error($link);
+			}
 		}
-	}
-
-	$sql3 = "INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`) VALUES ('$res_id','$e_time', '$hours')";
-	// insert in database 
-	$rs3 = mysqli_query($link, $sql3);
-
-	if($rs0 && $rs1 && $rs2 && $rs3) {
-		echo "Team Reserved Successfully";
-	}
-	else {
-		echo mysqli_error($link);
-	}
+	}	
 }
 
 ?>

@@ -11,6 +11,8 @@ if(isset($_POST["stadium_id"]) && !empty($_POST["stadium_id"])){
     // Get hidden input value
     $id = $_POST["stadium_id"];
     
+    // test case for input field validation
+
     // Validate name
     $input_name = trim($_POST["stadium_name"]);
     if(empty($input_name)){

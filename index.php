@@ -12,7 +12,7 @@
 </head>
  
 <body>
-    <form action="validate_login.php" method="post">
+    <form action="./validate_login.php" method="post">
         <div class="login-box">
             <h1>Login</h1>
  
@@ -29,7 +29,7 @@
             </div>
  
             <input class="button" type="submit" name="login" value="Sign In">
-	    <a class="navbar-brand" href="register.php" ><button type="button" class="button">Register</button></a>
+	    <a class="navbar-brand" href="./register.php" ><button type="button" class="button">Register</button></a>
         </div>
     </form>
 </body>

@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <title>Contact Form - PHP/MySQL Demo Code</title>
 </head>
 
 <body>
 <fieldset>
 <legend>Ticket Booking Form</legend>
-<form name="frmContact" method="post" action="validate_booking.php">
+<form name="frmContact" method="post" action="validate_booking.php" class="form">
 <p>
 <label>Matches</label>
-<select name="match">
+<select name="match" class="form-control">
 <?php
 // Include config file
     require_once "../../config.php";
@@ -31,7 +32,7 @@
 </p>
 <p>
 <label>Seat Type</label>
-<select id="seat" name="seat">
+<select id="seat" name="seat" class="form-control">
 	<option>Lower</option>
 	<option>Economy</option>
 	<option>First Class</option>
@@ -39,7 +40,7 @@
 </p>
 <p>&nbsp;</p>
 <p>
-<input type="submit" name="Submit" id="Submit" value="Submit">
+<input type="submit" name="Submit" class="btn btn-primary" id="Submit" value="Submit">
 </p>
 </form>
 </fieldset>
