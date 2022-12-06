@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `billing` (
   `invoice_number` int(11) NOT NULL,
   `total_cost` int(11) DEFAULT NULL,
-  `team_id` int(11) NOT NULL UNIQUE
+  `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
