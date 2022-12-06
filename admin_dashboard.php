@@ -23,7 +23,7 @@
 <a class="navbar-brand" href="./tables/team table/team.php" ><button type="button" class="btn btn-primary">Team</button></a>
 <a class="navbar-brand" href="./tables/duration table/duration.php" ><button type="button" class="btn btn-primary">Duration</button></a>
 <a class="navbar-brand" href="./tables/billing table/billing.php" ><button type="button" class="btn btn-primary">Billing</button></a>
-<a class="navbar-brand" href="login.php" ><button type="button" class="btn btn-primary">Logout</button></a>
+<a class="navbar-brand" href="index.php" ><button type="button" class="btn btn-primary">Logout</button></a>
 </div>
 </nav>
 </div>

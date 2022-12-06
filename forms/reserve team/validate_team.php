@@ -70,7 +70,7 @@ else {
 			}
 			else {
 				// Rollback transaction
-				mysqli_rollback($con);
+				mysqli_rollback($link);
 				echo mysqli_error($link);
 			}
 		}
