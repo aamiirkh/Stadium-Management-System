@@ -10,15 +10,11 @@ INSERT INTO STADIUM VALUES (1, 'National Stadium', 'Cricket', 34228, 1);
 INSERT INTO STADIUM VALUES (2, 'Asghar Ali Shah Stadium', 'Cricket', 10000, 2);
 
 
-
 INSERT INTO JOBS VALUES ('GDR', 'Gardener', 8000);
-INSERT INTO TEAM VALUES (1, 'Abdul FC', 15);
-INSERT INTO STAFF VALUES (1, 'Aamir', 'Bangee', 03331234567, '2022-11-22', 'GDR');
+INSERT INTO TEAM (`team_name`, `no_of_team_members`) VALUES ('Abdul FC', 15);
+INSERT INTO STAFF VALUES ('Aamir', 'Bangee', 03331234567, '2022-11-22', 'GDR');
 INSERT INTO TEAM_MEMBER values (1, 1, 'Abdullah', 'Naeem', 21, 03331236547, 'M', 'Owner');
 INSERT INTO TICKET VALUES (1, '2022-11-22', '17:00:00', 2, 'First Class');
-INSERT INTO BILLING VALUES (1, 1000, null, 1);
-INSERT INTO RESERVATION VALUES ('2022-11-28', '18:00:00', 1, 1, 1);
-
 
 
 SELECT STADIUM_NAME FROM LOCATION, STADIUM WHERE stadium.location_id = LOCATION.location_id; 

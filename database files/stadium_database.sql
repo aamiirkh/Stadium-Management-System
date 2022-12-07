@@ -33,12 +33,6 @@ CREATE TABLE `billing` (
   `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `billing`
---
-
-INSERT INTO `billing` (`invoice_number`, `total_cost`, `team_id`) VALUES
-(1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -52,12 +46,8 @@ CREATE TABLE `duration` (
   `no_of_reservation_hours` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `duration`
---
 
-INSERT INTO `duration` (`reservation_id`, `end_time`, `no_of_reservation_hours`) VALUES
-(1, '20:00:00', 2);
+
 
 -- --------------------------------------------------------
 
@@ -95,9 +85,7 @@ CREATE TABLE `location` (
 -- Dumping data for table `location`
 --
 
-INSERT INTO `location` (`location_id`, `address`, `postal_code`, `city`) VALUES
-(1, 'National Stadium Colony, Gulshan-e-Iqbal', 74600, 'Karachi'),
-(2, 'Shahrah Noor Jahan, Block C North Nazimabad Town', 74700, 'Karachi');
+
 
 -- --------------------------------------------------------
 
@@ -116,9 +104,6 @@ CREATE TABLE `reservation` (
 --
 -- Dumping data for table `reservation`
 --
-
-INSERT INTO `reservation` (`reservation_id`, `Date`, `start_time`, `team_id`, `stadium_id`) VALUES
-(1, '2022-11-28', '18:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -154,12 +139,7 @@ CREATE TABLE `stadium` (
   `location_id` int(11) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `stadium`
---
-
-INSERT INTO `stadium` (`stadium_id`, `stadium_name`, `stadium_type`, `stadium_capacity`, `location_id`) VALUES
-(1, 'National Stadium', 'Cricket', 34228, 1);
+-
 
 -- --------------------------------------------------------
 
@@ -195,12 +175,7 @@ CREATE TABLE `team` (
   `no_of_team_members` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `team`
---
 
-INSERT INTO `team` (`team_id`, `team_name`, `no_of_team_members`) VALUES
-(1, 'Abdul FC', 15);
 
 -- --------------------------------------------------------
 
@@ -219,14 +194,6 @@ CREATE TABLE `team_member` (
   `role` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `team_member`
---
-
-INSERT INTO `team_member` (`member_id`, `team_id`, `f_name`, `l_name`, `age`, `phone_number`, `sex`, `role`) VALUES
-(1, 1, 'Abdullah', 'Naeem', 21, '3331236547', 'M', 'Owner');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `ticket`
@@ -238,18 +205,6 @@ CREATE TABLE `ticket` (
   `seat_type` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `ticket`
---
-
-INSERT INTO `ticket` (`ticket_id`, `reservation_id`, `seat_type`) VALUES
-(1, 1, 'First Class'),
-(2, 1, 'Lower'),
-(3, 1, 'Economy');
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `billing`
@@ -334,49 +289,49 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-  MODIFY `invoice_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `invoice_number` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
-  MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `stadium`
 --
 ALTER TABLE `stadium`
-  MODIFY `stadium_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `stadium_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `team`
 --
 ALTER TABLE `team`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `team_member`
 --
 ALTER TABLE `team_member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ticket_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
