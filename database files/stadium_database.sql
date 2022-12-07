@@ -151,7 +151,7 @@ CREATE TABLE `stadium` (
   `stadium_name` varchar(100) NOT NULL,
   `stadium_type` varchar(20) NOT NULL,
   `stadium_capacity` int(11) NOT NULL,
-  `location_id` int(11) NOT NULL
+  `location_id` int(11) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
